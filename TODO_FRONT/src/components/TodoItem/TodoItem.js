@@ -64,6 +64,7 @@ export default function TodoItem({ todo, deleteTodo, updateTodo }) {
           Modifier
         </button>
         <button
+          data-testid="button-deleteTodo"
           onClick={() => handleDeleteTodo(todo)}
           className="btn btn-primary-reverse mr10"
         >
