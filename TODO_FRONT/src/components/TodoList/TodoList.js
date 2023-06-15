@@ -3,7 +3,7 @@ import EditTodo from "../EditTodo/EditTodo";
 
 export default function TodoList({ todoList, deleteTodo, updateTodo }) {
   return todoList.length ? (
-    <ul data-cy="Todo">
+    <ul>
       {todoList.map((t) =>
         t.edit ? (
           <EditTodo key={t.id} todo={t} updateTodo={updateTodo} />
@@ -19,7 +19,7 @@ export default function TodoList({ todoList, deleteTodo, updateTodo }) {
     </ul>
   ) : (
     <>
-      <p data-cy="noTodo">Aucune todo pour le moment</p>
+      <p>Aucune todo pour le moment</p>
     </>
   );
 }
