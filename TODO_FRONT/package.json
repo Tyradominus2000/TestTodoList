@@ -43,6 +43,7 @@
   "devDependencies": {
     "@types/jest": "^29.5.2",
     "cypress": "^12.14.0",
+    "eslint-plugin-cypress": "^2.13.3",
     "ghpages": "^0.0.10",
     "jest": "^27.5.1"
   }
