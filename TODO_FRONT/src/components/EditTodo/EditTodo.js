@@ -41,7 +41,10 @@ export default function EditTodo({ todo, updateTodo }) {
     }
   }
   return (
-    <div className="d-flex justify-content-center align-items-center mb20" data-testid="value">
+    <div
+      className="d-flex justify-content-center align-items-center mb20"
+      data-testid="value"
+    >
       <input
         value={value}
         type="text"
@@ -51,16 +54,19 @@ export default function EditTodo({ todo, updateTodo }) {
         className="mr20 flex-fill p10"
       />
       <button
+        data-testid={"button-cancelTodo"}
         onClick={() => modifyTodo({ ...todo, edit: !todo.edit })}
         className="btn btn-primary-reverse mr10"
       >
         Cancel
       </button>
-      <button onClick={handleClick} className="btn btn-primary">
+      <button
+        data-testid={"button-saveTodo"}
+        onClick={handleClick}
+        className="btn btn-primary"
+      >
         Save
       </button>
     </div>
   );
 }
-
-
