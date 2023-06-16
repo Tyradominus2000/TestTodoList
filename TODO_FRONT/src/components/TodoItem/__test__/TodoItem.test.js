@@ -26,6 +26,11 @@ beforeEach(() => {
   );
 });
 
+// Clear all the mock to free hardware
+afterEach(() => {
+  jest.clearAllMocks();
+});
+
 // Verifie que les elements existe dans le composants
 test("Contient elements", () => {
   //get the elements i will use
