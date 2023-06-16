@@ -45,6 +45,27 @@ describe("template spec", () => {
     cy.get("ul > li > span").contains(MockText);
   });
 
+  // Should not modifie 4 todo
+  it("Should not modify", () => {
+    const MockText = "Test 1 Modifier Cancel";
+    // Get the 4 button edit and click it
+    cy.get("ul > li > div > button[data-testid=button-editTodo]").eq(3).click();
+    // Input MockText in the input
+    cy.get('input[value="Test 1 Modifier"]').focus().clear().type(MockText).blur();
+    // CLick on the save button
+    cy.get("ul > div > button[data-testid=button-cancelTodo").click();
+    // Verify if the value as not been modified
+    cy.get("ul > li > span").contains(MockText).should("not.exist");
+  });
+
+  // Should done
+  it("Should done", () => {
+    // Get the 4 button edit and click it
+    cy.get("ul > li > div > button[data-testid=button-toggleTodo]").eq(3).click();
+    // Verify if the value as been done
+    cy.get("ul > li > span").contains("Test 1 Modifier ✔️");
+  });
+
   // Delete the 4 todo
   it("Sould Delete", () => {
     // Click on the delete button of the 4 todo
